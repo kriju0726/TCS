@@ -33,7 +33,7 @@ void print(string ip, string op){
 
 int main(){
     string ip, op = "";
-    cout<<"Enter your String...: ";
+    cout<<"Enter your String.: ";
     cin>>ip;
     
     
