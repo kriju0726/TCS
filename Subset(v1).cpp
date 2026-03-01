@@ -34,7 +34,7 @@ void print(string ip, string op){
 
 int main(){
     string ip, op = "";
-    cout<<"Enter your I/P String..: ";
+    cout<<"Enter your I/P String.: ";
     cin>>ip;
     
     op.push_back(ip[0]);
