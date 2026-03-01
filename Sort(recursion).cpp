@@ -27,14 +27,18 @@ void sorts1(stack<int>& s){
 
 
 int main(){
+    int n;
+    cout<<"How many elements you have.?..: ";
+    cin>>n;
+    
     stack<int> s;
-    s.push(3);
-    s.push(5);
-    s.push(1);
-    s.push(9);
-    s.push(0);
-    s.push(7);
-    int n = s.size();
+    cout<<"Enter your "<<n<<" elements...: ";
+    for(int i=0; i<n; i++){
+        int d;
+        cin>>d;
+        s.push(d);
+    }
+    
     
     sorts1(s);
     cout<<"After Sorting.: ";
