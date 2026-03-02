@@ -12,11 +12,10 @@ bool check(vector<int>& nums, int sum, int n){
     
     if(t[n][sum] != -1) return t[n][sum];
     
-    if(nums[n-1] <= sum){
+    if(nums[n-1] <= sum)
         return t[n][sum] = (check(nums, sum - nums[n-1], n-1) || check(nums, sum , n-1));
-    }else{
+    else
         return t[n][sum] = check(nums, sum, n-1);
-    }
     
     return 0;
 }
