@@ -20,4 +20,28 @@ int main(){
 }
 
 
+//when only one array is given., (price{}).
+/*#include<bits/stdc++.h>
+using namespace std;
+
+int solve(vector<int>& pri, int n, int rl){
+    if(n==0) return 0;
+    if(rl==0) return 0;
+    
+    if(n <= rl) return max(pri[n-1] + solve(pri, n, rl-n), solve(pri, n-1, rl));
+    else return solve(pri, n-1, rl);
+}
+
+int main(){
+    //vector<int> len = {1,2,3,4};
+    vector<int> pri = {2,5,7,8};
+    
+    int n = pri.size();
+    int rl = 8;
+    
+    cout<<"Max. Profit..: "<<solve(pri, n, rl);
+    
+    return 0;
+}*/
+
 
