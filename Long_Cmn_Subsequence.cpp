@@ -52,7 +52,7 @@ int main(){
 
 
 // Longest Common Subsequence(Tabulation Approach(Bottom - Up))...
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 using namespace std;
 
 int main(){
@@ -72,7 +72,58 @@ int main(){
     
     cout<<"LCS..: "<<t[n][m];
     return 0;
+}*/
+
+
+
+
+
+// Print Longest Common Subsequence... (First.: Count., then Print.)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string x = "acbcf";
+    string y = "abcdef";
+    int n = x.length(), m = y.length();
+    
+    vector<vector<int>> t(n+1, vector<int>(m+1, 0));
+    
+    for(int i=1; i<n+1; i++){
+        for(int j=1; j<m+1; j++){
+            if(x[i-1] == y[j-1]) t[i][j] = 1 + t[i-1][j-1];
+            else t[i][j] = max(t[i-1][j], t[i][j-1]);
+        }
+    }
+    
+    cout<<"Length of that Common Subsequence is "<<t[n][m];
+    
+    int i = n, j = m;
+    string ans = "";
+    
+    while(i>0 && j>0){
+        if(x[i-1] == y[j-1]){
+            ans.push_back(x[i-1]);
+            i--;
+            j--;
+        }
+        else{
+            if(t[i][j-1] > t[i-1][j]) j--;
+            else i--;
+        }
+    }
+    
+    reverse(ans.begin(), ans.end());
+    
+    cout<<"\nThat Subsequence is "<<ans;
+    
+    return 0;
 }
+
+
+
+
 
 
 
